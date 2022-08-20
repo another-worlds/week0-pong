@@ -1,9 +1,15 @@
--- Initialize window width, height variables
+--[[
+1. 1. Initialize window width, height variables
+2. Override love initializer funtction
+3. Display "Hello world"
+]]
+
+-- 1. Initialize window width, height variables
 WINDOW_WIDTH = 1280
 WINDOW_HEIGHT = 720
 
 
--- Override love initializer funtction
+-- 2. Override love initializer funtction
 function love.load()
     love.window.setMode(WINDOW_WIDTH, WINDOW_HEIGHT, {
     fullscreen = false,
@@ -12,6 +18,7 @@ function love.load()
     })
 end
 
+-- 3. Display "Hello world"
 function love.draw()
     love.graphics.printf(
         "Hello World!",
