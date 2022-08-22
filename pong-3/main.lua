@@ -22,6 +22,11 @@ BALL_HEIGHT = 6
 BALL_XSTART = V_WINDOW_WIDTH / 2 - BALL_WIDTH / 2
 BALL_YSTART = V_WINDOW_HEIGHT / 2 - BALL_HEIGHT / 2
 
+-- Font constants
+SMALL_FONT_SIZE = 8
+SCORE_FONT_SIZE = 32
+SCORE_DISPLACE = 50
+
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
 
@@ -43,8 +48,8 @@ function love.load()
     score1 = 0
     score2 = 0
 
-    small_font = love.graphics.newFont('font.ttf', 8)
-    score_font = love.graphics.newFont('font.ttf', 32)
+    small_font = love.graphics.newFont('font.ttf', SMALL_FONT_SIZE)
+    score_font = love.graphics.newFont('font.ttf', SCORE_FONT_SIZE)
 end
 
 function love.draw()
@@ -63,8 +68,8 @@ function love.draw()
 
 
     love.graphics.setFont(score_font)
-    love.graphics.print(tostring(score1), V_WINDOW_WIDTH / 2 - 8 - 50, V_WINDOW_HEIGHT / 3)
-    love.graphics.print(tostring(score1), V_WINDOW_WIDTH / 2 - 8 + 50, V_WINDOW_HEIGHT / 3)
+    love.graphics.print(tostring(score1), V_WINDOW_WIDTH / 2 - SCORE_FONT_SIZE / 4 - SCORE_DISPLACE, V_WINDOW_HEIGHT / 3)
+    love.graphics.print(tostring(score1), V_WINDOW_WIDTH / 2 - SCORE_FONT_SIZE / 4 + SCORE_DISPLACE, V_WINDOW_HEIGHT / 3)
     
     push:apply('end')
 end
